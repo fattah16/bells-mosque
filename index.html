@@ -1,150 +1,1706 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>loruki</title>
-  <link rel="stylesheet" href="./index.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bells University Mosque Construction Project</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            scroll-behavior: smooth;
+            line-height: 1.6;
+            color: #333;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Navigation */
+        nav {
+            background: #065f46;
+            color: white;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+        }
+        
+        .logo-section {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .mosque-icon {
+            font-size: 2rem;
+            color: #b7ebdc;
+        }
+        
+        .logo {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+        .logo-section img{
+            border-radius: 50%;
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+            align-items: center;
+        }
+        
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .nav-links a:hover {
+            color: #b7ebdc;
+        }
+        
+        
+        
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+        
+        .mobile-menu {
+            display: none;
+            background: #059669;
+            padding: 1rem;
+        }
+        
+        .mobile-menu.active {
+            display: block;
+        }
+        
+        .mobile-menu a {
+            display: block;
+            color: white;
+            text-decoration: none;
+            padding: 0.5rem 0;
+            border-bottom: 1px solid #10b981;
+        }
+        /* students */
+        .students{
+            align-items: center;
+            background-color: #d97706;
+            padding: 0 100px;
+            display: flex;
+        }
+        .students a{
+            
+            color: black;
+            text-decoration: none;
+            padding: 10px;
+            font-weight: 600;
+        }
+
+       
+        
+
+        
+        /* Hero Section */
+        .hero {
+            position: relative;
+            min-height: 80vh;
+            background: linear-gradient(rgba(6, 95, 70, 0.8), rgba(6, 95, 70, 0.8)),
+                        url('https://images.unsplash.com/photo-1564769662308-034ed7c89b66?ixlib=rb-4.0.3') center/cover;
+            display: flex;
+            align-items: center;
+            color: white;
+        }
+        
+        .hero-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+        
+        .hero-text h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+        
+        .hero-text p {
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+        
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+        
+        .btn {
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 8px;
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.3s;
+            cursor: pointer;
+        }
+        
+        .btn-primary {
+            background: #10b981;
+            color: white;
+        }
+        
+        .btn-primary:hover {
+            background: #059669;
+            transform: translateY(-2px);
+        }
+        
+        .btn-outline {
+            background: transparent;
+            color: white;
+            border: 2px solid white;
+        }
+        
+        .btn-outline:hover {
+            background: white;
+            color: #065f46;
+        }
+        
+        .hero-image img {
+            width: 100%;
+            border-radius: 15px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+        }
+        
+        /* Sections */
+        section {
+            padding: 5rem 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            color: #065f46;
+            margin-bottom: 3rem;
+        }
+        
+        /* About Section */
+        .about {
+            background: white;
+        }
+       
+        
+       
+       
+        
+        .goal-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+            margin-bottom: 50px;
+        }
+        .goal-image{
+            text-align: center;
+            color:  #059669;
+        }
+        
+        .goal-image img {
+            width: 100%;
+            height: 300px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        
+        .goal-text h3 {
+            color: #059669;
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+        }
+        
+        .goal-text p {
+            margin-bottom: 1.5rem;
+            color: #666;
+        }
+        
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+           
+        }
+        .about-image{
+            text-align: center;
+        }
+        
+        .about-image img {
+            width: 100%;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        
+        .about-text h3 {
+            color: #059669;
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+        }
+        
+        .about-text p {
+            margin-bottom: 1.5rem;
+            color: #666;
+        }
+        
+        .feature-list {
+            list-style: none;
+            margin: 2rem 0;
+        }
+        
+        .feature-list li {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 1rem;
+            color: #666;
+        }
+        
+        .feature-list .check-icon {
+            color: #10b981;
+            margin-right: 0.5rem;
+            margin-top: 0.2rem;
+        }
+        
+        .quote {
+            font-style: italic;
+            color: #059669;
+            margin-top: 1.5rem;
+        }
+        
+        /* Progress Section */
+        .progress-section {
+            background: #f3f4f6;
+        }
+        
+        .progress-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            margin-bottom: 2rem;
+        }
+        
+        .progress-card h3 {
+            color: #059669;
+            margin-bottom: 1rem;
+        }
+        
+        .progress-info {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+        }
+        
+        .progress-bar {
+            height: 20px;
+            background: #e5e7eb;
+            border-radius: 10px;
+            overflow: hidden;
+            margin-bottom: 1rem;
+        }
+        
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #065f46, #10b981);
+            border-radius: 10px;
+            transition: width 0.5s ease;
+        }
+        
+        .phases {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+            margin: 2rem 0;
+        }
+        
+        .phase-card {
+            padding: 1.5rem;
+            border-radius: 10px;
+            text-align: center;
+        }
+        
+        .phase-completed {
+            background: #d1fae5;
+            color: #065f46;
+        }
+        
+        .phase-progress {
+            background: #fef3c7;
+            color: #92400e;
+        }
+        
+        .phase-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1rem;
+        }
+        
+        .phase-completed .phase-icon {
+            background: #10b981;
+            color: white;
+        }
+        
+        .phase-progress .phase-icon {
+            background: #f59e0b;
+            color: white;
+        }
+        
+        .progress-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .progress-item {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        
+        .progress-item img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+        
+        .progress-item-content {
+            padding: 1.5rem;
+        }
+        
+        .progress-item h4 {
+            margin-bottom: 0.5rem;
+            color: #065f46;
+        }
+        
+        /* Gallery Section */
+        .gallery {
+            background: white;
+        }
+        
+        .gallery-filters {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 3rem;
+            flex-wrap: wrap;
+        }
+        
+        .filter-btn {
+            padding: 0.8rem 1.5rem;
+            background: #f3f4f6;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-weight: 500;
+        }
+        
+        .filter-btn.active, .filter-btn:hover {
+            background: #065f46;
+            color: white;
+        }
+        
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+        
+        .gallery-item {
+            position: relative;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+        
+        .gallery-item:hover {
+            transform: translateY(-10px);
+        }
+        
+        .gallery-item img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            transition: transform 0.3s;
+        }
+        
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+        
+        .gallery-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(transparent, rgba(0,0,0,0.8));
+            color: white;
+            padding: 2rem 1.5rem 1.5rem;
+            transform: translateY(100%);
+            transition: transform 0.3s;
+        }
+        
+        .gallery-item:hover .gallery-overlay {
+            transform: translateY(0);
+        }
+        
+        .gallery-overlay h4 {
+            margin-bottom: 0.5rem;
+        }
+        
+        .gallery-overlay p {
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+        
+        /* Donation Section */
+        .donation {
+             padding: 60px 0;
+            background: #f0fdf4;
+        }
+         .donate-container {
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+        }
+        
+        
+        
+       
+        
+        .bank-info {
+            background-color: white;
+            padding: 32px;
+            border-radius: 8px;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+        
+        .bank-info h3 {
+            font-size: 1.5rem;
+            color: #064e3b;
+            margin-bottom: 24px;
+        }
+        
+        .bank-info p {
+            margin-bottom: 24px;
+            color: #4b5563;
+        }
+        
+        .bank-details {
+            background-color: #ecfdf5;
+            padding: 24px;
+            border-radius: 8px;
+            margin-bottom: 24px;
+        }
+        
+        .bank-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+        }
+        
+        .bank-item h4 {
+            font-weight: 600;
+            color: #064e3b;
+            margin-bottom: 4px;
+        }
+        
+        .bank-item p {
+            color: #4b5563;
+            margin-bottom: 0;
+        }
+        
+        .transfer-btn {
+            width: 100%;
+            background-color: #d97706;
+            color: white;
+            font-weight: 700;
+            padding: 12px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            margin-bottom: 24px;
+        }
+        
+        .transfer-btn:hover {
+            background-color: #b45309;
+        }
+        
+        .rewards-box {
+            padding: 16px;
+            background-color: #f3f4f6;
+            border-radius: 8px;
+        }
+        
+        .rewards-box h4 {
+            font-weight: 600;
+            color: #064e3b;
+            margin-bottom: 12px;
+        }
+        
+        .rewards-list {
+            list-style-type: none;
+        }
+        
+        .rewards-list li {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 12px;
+            color: #4b5563;
+        }
+        
+        .rewards-list i {
+            color: #d97706;
+            margin-right: 10px;
+            margin-top: 3px;
+        }
+        
+        .donation-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+        }
+        
+        .donation-form {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        
+        .donation-form h3 {
+            color: #059669;
+            margin-bottom: 2rem;
+        }
+        
+        .amount-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+        
+        .amount-btn {
+            padding: 1rem;
+            border: 2px solid #d1fae5;
+            background: white;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-weight: 500;
+            color: #059669;
+        }
+        
+        .amount-btn:hover, .amount-btn.selected {
+            background: #d1fae5;
+            border-color: #059669;
+        }
+        
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+            color: #374151;
+        }
+        
+        .form-group input, .form-group textarea {
+            width: 100%;
+            padding: 0.8rem;
+            border: 2px solid #e5e7eb;
+            border-radius: 8px;
+            transition: border-color 0.3s;
+            font-family: inherit;
+        }
+        
+        .form-group input:focus, .form-group textarea:focus {
+            outline: none;
+            border-color: #10b981;
+        }
+        
+        .bank-info {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        
+        .bank-details {
+            background: #f0fdf4;
+            padding: 2rem;
+            border-radius: 10px;
+            margin: 2rem 0;
+        }
+        
+        .bank-detail-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+        }
+        
+        .bank-detail-item h4 {
+            color: #059669;
+            margin-bottom: 0.5rem;
+        }
+        
+        .rewards-box {
+            background: #f9fafb;
+            padding: 1.5rem;
+            border-radius: 10px;
+            margin-top: 2rem;
+        }
+        
+        .rewards-list {
+            list-style: none;
+        }
+        
+        .rewards-list li {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 0.8rem;
+        }
+        
+        .rewards-list .star-icon {
+            color: #f59e0b;
+            margin-right: 0.5rem;
+            margin-top: 0.2rem;
+        }
+        
+        /* Contact Section */
+        .contact {
+            background: white;
+        }
+        
+        .contact-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+        }
+        
+        .contact-info {
+            background: #f9fafb;
+            padding: 2rem;
+            border-radius: 15px;
+        }
+        
+        .contact-person {
+            margin-bottom: 2rem;
+            padding-bottom: 1.5rem;
+            border-bottom: 1px solid #e5e7eb;
+        }
+        
+        .contact-person:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+        }
+        
+        .contact-person h4 {
+            color: #065f46;
+            margin-bottom: 0.3rem;
+        }
+        
+        .contact-person p {
+            color: #666;
+            margin-bottom: 0.3rem;
+        }
+        
+        .map-container {
+            background: #f0fdf4;
+            padding: 2rem;
+            border-radius: 15px;
+            margin-top: 2rem;
+        }
+        
+        .map-container iframe {
+            width: 100%;
+            height: 300px;
+            border: none;
+            border-radius: 10px;
+        }
+        
+        .contact-form {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        
+        .prayer-times {
+            background: #f9fafb;
+            padding: 2rem;
+            border-radius: 15px;
+            margin-top: 2rem;
+        }
+        
+        .prayer-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 1rem;
+        }
+        
+        .prayer-table th {
+            background: #065f46;
+            color: white;
+            padding: 1rem;
+            text-align: left;
+        }
+        
+        .prayer-table td {
+            padding: 1rem;
+            border-bottom: 1px solid #e5e7eb;
+        }
+        
+        .prayer-table tr:hover {
+            background: #f9fafb;
+        }
+        
+        /* Footer */
+        footer {
+            background: #064e3b;
+            color: white;
+            padding: 3rem 0;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: 1fr auto 1fr;
+            gap: 2rem;
+            align-items: center;
+        }
+        
+        .footer-logo {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .footer-text {
+            color: #b7ebdc;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 1rem;
+        }
+        
+        .social-links a {
+            color: #b7ebdc;
+            font-size: 1.5rem;
+            transition: color 0.3s;
+        }
+        
+        .social-links a:hover {
+            color: white;
+        }
+        
+        .footer-right {
+            text-align: right;
+        }
+        
+        .footer-right p {
+            color: #b7ebdc;
+            margin-bottom: 0.5rem;
+        }
+        
+       
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+            }
+            .students{
+                padding: 0 20px;
+                text-align: center;
+                display: flex;
+                flex-direction: column;
+                }
+            
+            .hero-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+            
+            .hero-text h1 {
+                font-size: 2rem;
+            }
+            
+            .about-content,.goal-content,.goal-content, .donation-content, .contact-content ,.goal-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .amount-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .bank-detail-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .footer-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+                gap: 2rem;
+            }
+            
+            .footer-right {
+                text-align: center;
+            }
+            
+            .phases {
+                grid-template-columns: 1fr;
+            }
+            
+            .gallery-filters {
+                justify-content: flex-start;
+                overflow-x: auto;
+                padding-bottom: 1rem;
+            }
+        }
+        
+        /* Lightbox for Gallery */
+        .lightbox {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.9);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 3000;
+        }
+        
+        .lightbox.active {
+            display: flex;
+        }
+        
+        .lightbox-content {
+            max-width: 90%;
+            max-height: 90%;
+            position: relative;
+        }
+        
+        .lightbox-content img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            border-radius: 10px;
+        }
+        
+        .lightbox-close {
+            position: absolute;
+            top: -40px;
+            right: 0;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 2rem;
+            cursor: pointer;
+        }
+        
+        .lightbox-nav {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(255,255,255,0.2);
+            border: none;
+            color: white;
+            font-size: 2rem;
+            padding: 1rem;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        
+        .lightbox-nav:hover {
+            background: rgba(255,255,255,0.3);
+        }
+        
+        .lightbox-prev {
+            left: -60px;
+        }
+        
+        .lightbox-next {
+            right: -60px;
+        }
+        
+        /* Animation Classes */
+        .fade-in {
+            animation: fadeIn 0.5s ease-in;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .slide-in-left {
+            animation: slideInLeft 0.8s ease-out;
+        }
+        
+        @keyframes slideInLeft {
+            from { opacity: 0; transform: translateX(-50px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+        
+        .slide-in-right {
+            animation: slideInRight 0.8s ease-out;
+        }
+        
+        @keyframes slideInRight {
+            from { opacity: 0; transform: translateX(50px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+    </style>
 </head>
 <body>
-  
-    <div class="nav-bar">
-      <div class="logo">
-        <i>luruki</i>
-      </div>
-      <nav>
-        <ul>
-          <li><a href="">home</a></li>
-          <li><a href="">features</a></li>
-          <li><a href="">docs</a></li>
-        </ul>
-      </nav>
-    </div>
-     
-    <section class="hero">
-      <div class="hero-text">
-        <h1>Easier Development</h1>
-        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. 
-          <br>Accusamus ratione autem minima! Tempore quam consequatur facere obcaecati recusandae ut sint.</p>
-        <button class="btn"> Read More</button>
-      </div>
- 
-      <div class="hero-form">
-        <h1>Reqest a Demo</h1>
-        <div class="name">
-          <input type="text" name="name" placeholder="name">
-        </div>
-        <div class="name">
-          <input type="text" name="name" id="name" placeholder="name">
-        </div>
-        <div>
-          <input type="email" name="email" id="email" placeholder="email">
+
+    <!-- Navigation -->
+    <nav>
+        <div class="container">
+            <div class="nav-container">
+                <div class="logo-section">
+                    <img src="./logo.jpg" alt="Bells Muslim Mosque Logo" style="height: 50px;">
+                    <span style="font-size: 1.2rem; font-weight: bold;">Bells University Mosque</span>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#progress">Progress</a></li>
+                    <li><a href="#gallery">Gallery</a></li>
+                    <li><a href="#donate">Donate</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                   
+                </ul>
+                <button class="mobile-menu-btn" onclick="toggleMobileMenu()">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
         </div>
         
-        <input type="submit" value="send" class="btn">
-        
-      </div>
-      
+        <!-- Mobile Menu -->
+        <div class="mobile-menu" id="mobile-menu">
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#progress">Progress</a>
+            <a href="#gallery">Gallery</a>
+            <a href="#donate">Donate</a>
+            <a href="#contact">Contact</a>
+                   
+        </div>
+    </nav>
+    <!-- Students -->
+    <section class="students">
+        <p>please all students should register here</p>
+         <a class="click-student" href="https://docs.google.com/forms/d/e/1FAIpQLSeYH9K4C151-c3zFMlAZKUeVJnccgvoxybsuYLDKfzBHdr_Ew/viewform?usp=header">click Me</a>
     </section>
-   
-      
-  
-   <section class="about">
-      <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. 
-        <br>Dignissimos quos exercitationem 
-        <br>dolores perspiciatis consectetur doloremque quidem <br>soluta temporibus repellat suscipit!</p>
-      <div class="box">
-        <div class="about-card">
-          <img src="./ayoade.jpg" alt="">
-          <h1>123455</h1>
-          <p>gdgdhd</p>
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text slide-in-left">
+                    <h1>Building Bells University Mosque</h1>
+                    <p>Help us establish a house of Allah where the community can gather for worship, education, and spiritual growth. Your donation will be a continuous charity (Sadaqah Jariyah) for you and your loved ones.</p>
+                    <div class="hero-buttons">
+                        <a href="#donate" class="btn btn-primary">Donate Now</a>
+                        <a href="#about" class="btn btn-outline">Learn More</a>
+                    </div>
+                </div>
+                <div class="hero-image slide-in-right">
+                    <img src="./image1.jpg" alt="Mosque Construction">
+                </div>
+            </div>
         </div>
-        <div class="about-card">
-          <img src="./ayoade.jpg" alt="images">
-          <h1>123455</h1>
-          <p>gdgdhd</p>
-        </div>
-        <div class="about-card">
-          <img src="./ayoade.jpg" alt="images">
-          <h1>123455</h1>
-          <p>gdgdhd</p>
-        </div>
-      </div>
-      <div class="sub-about">
-        <img src="" alt="images">
-        <div class="sub-about-card">
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing.</p>
-        </div>
-        <div class="sub-about-card">
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing.</p>
-        </div>
-      </div>
-      
-    </section>
-    <section class="cloud">
-      <div class="cloud-text">
-        <h1>extreme cloud 
-          <br>hosting</h1>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci, Lorem ipsum dolor sit amet.amet!</p>
-        <button type="button" class="button">read more</button>
-
-      </div>
-      <img src="" alt="cloud image">
     </section>
 
-
-    <section class="la">
-      <h1>supported languages</h1>
-      <div class="lang">
-        <div class="card">
-        <h1>nodejs</h1>
-        <img src="./ayoade.jpg" alt="lang image">
-      </div>
-      <div class="card">
-        <h1>nodejs</h1>
-        <img src="./ayoade.jpg" alt="lang image">
-      </div>
-      <div class="card">
-        <h1>nodejs</h1>
-        <img src="./ayoade.jpg" alt="lang image">
-      </div>
-      <div class="card">
-        <h1>nodejs</h1>
-        <img src="./ayoade.jpg" alt="lang image">
-      </div>
-      <div class="card">
-        <h1>nodejs</h1>
-        <img src="./ayoade.jpg" alt="lang image">
-      </div>
-      <div class="card">
-        <h1>nodejs</h1>
-        <img src="./ayoade.jpg" alt="lang image">
-      </div>
-      <div class="card">
-        <h1>nodejs</h1>
-        <img src="./ayoade.jpg" alt="lang image">
-      </div>
-
-      </div>
-      
+    <!-- About Section -->
+    <section id="about" class="about">
+       
+        <div class="container">
+            <h2 class="section-title">About The Project</h2>
+            <div class="goal-content">
+                <div class="goal-image fade-in">
+            <img src="./Screenshot_20250818_190934_WPS Office.jpg" alt="what we have">
+            <h1>Our Proposed dream</h1>
+            </div>
+         <div class="goal-image fade-in">
+            <img src="./IMG-20250706-WA0073.jpg" alt="what we have">
+            <h1>Our reality</h1>
+            </div>
+            </div>
+            <div class="about-content">
+                <div class="about-image fade-in">
+                    <img src="./image1.jpg" alt="Mosque Design">
+                </div>
+                <div class="about-text fade-in">
+                    <h3>A Center for Worship and Community</h3>
+                    <p>Bells University Mosque will be more than just a place of prayer. It will serve as a hub for the Muslim community, offering:</p>
+                    <ul class="feature-list">
+                        <li>
+                            <i class="fas fa-check check-icon"></i>
+                            <span>Daily prayers and Jumu'ah congregation</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-check check-icon"></i>
+                            <span>Quran classes for children and adults</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-check check-icon"></i>
+                            <span>Islamic lectures and seminars</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-check check-icon"></i>
+                            <span>Islamic services and community events</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-check check-icon"></i>
+                            <span>Charitable activities and food distribution</span>
+                        </li>
+                    </ul>
+                    <p class="quote">The Prophet Muhammad (peace be upon him) said: "Whoever builds a mosque for Allah, Allah will build for him a house in Paradise." <span style="font-size: 0.9rem; color: #666;">(Bukhari & Muslim)</span></p>
+                </div>
+            </div>
+        </div>
     </section>
-    <footer class="footer">
-      <p>loruki copyright@2020</p>
-      <div>
-        <ul>
-          <li><a href="">home</a></li>
-           <li><a href="">features</a></li>
-            <li><a href="">docs</a></li>
-        </ul>
-      </div>
-      <div>
-        <i></i>
-        <i></i>
-        <i></i>
-        <i></i>
-      </div>
+
+    <!-- Progress Section -->
+    <section id="progress" class="progress-section">
+        <div class="container">
+            <h2 class="section-title">Construction Progress</h2>
+            
+            <div class="progress-card fade-in">
+                <h3>Current Phase: Roofing Structure</h3>
+                <div class="progress-info">
+                    <span>Funds Raised</span>
+                    <span>₦8,500,000 / ₦50,000,000</span>
+                </div>
+                <div class="progress-bar">
+                    <div class="progress-fill" style="width: 56.67%"></div>
+                </div>
+                <p style="color: #666; margin-bottom: 2rem;">We've completed the foundation and walls ,first floor , and now we're working on the Roofing structure. Your donations are helping us move forward with this critical phase.</p>
+                
+                <div class="phases">
+                    <div class="phase-card phase-completed">
+                        <div class="phase-icon">
+                            <i class="fas fa-check"></i>
+                        </div>
+                        <h4>Phase 1: Foundation</h4>
+                        <p>Completed March 2023</p>
+                    </div>
+                    
+                    <div class="phase-card phase-completed">
+                        <div class="phase-icon">
+                            <i class="fas fa-check"></i>
+                        </div>
+                        <h4>Phase 2: Ground Floor</h4>
+                        <p>Completed March 2023</p>
+                    </div>
+                    <div class="phase-card phase-completed">
+                        <div class="phase-icon">
+                            <i class="fas fa-check"></i>
+                        </div>
+                        <h4>Phase 3: First Floor </h4>
+                        <p>Completed August 2023</p>
+                    </div>
+                    <div class="phase-card phase-progress">
+                        <div class="phase-icon">
+                            <i class="fas fa-hammer"></i>
+                        </div>
+                        <h4>Phase 4: Roofing</h4>
+                        <p>In Progress (Target: December 2025)</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="progress-gallery">
+                <div class="progress-item fade-in">
+                    <img src="./IMG-20250706-WA0068.jpg" alt="Foundation Work">
+                    <div class="progress-item-content">
+                        <h4>Foundation Work</h4>
+                        <p>Completed with reinforced concrete to ensure stability for decades to come.</p>
+                    </div>
+                </div>
+                <div class="progress-item fade-in">
+                    <img src="./IMG_20250711_144240.jpg" alt="Wall Construction">
+                    <div class="progress-item-content">
+                        <h4>Wall Construction</h4>
+                        <p>Brick walls with proper insulation for temperature regulation.</p>
+                    </div>
+                </div>
+                <div class="progress-item fade-in">
+                    <img src="./IMG-20250706-WA0071.jpg" alt="First Floor Structure">
+                    <div class="progress-item-content">
+                        <h4>First Floor Structure</h4>
+                        <p>Current work in progress with steel beams and concrete framework.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="gallery">
+        <div class="container">
+            <h2 class="section-title">Project Gallery</h2>
+            
+            <div class="gallery-filters">
+                <button class="filter-btn active" data-filter="all">All Photos</button>
+                <button class="filter-btn" data-filter="foundation">Foundation</button>
+                <button class="filter-btn" data-filter="construction">Construction</button>
+                <button class="filter-btn" data-filter="design">Design</button>
+                <button class="filter-btn" data-filter="community">Community</button>
+            </div>
+            
+            <div class="gallery-grid" id="gallery-grid">
+                <div class="gallery-item" data-category="foundation" onclick="openLightbox(this)">
+                    <img src="./side view.jpg" alt="Foundation laying ceremony">
+                    <div class="gallery-overlay">
+                        <h4>Side view of the mosque.</h4>
+                        <p>The lovely view of the mosque front the right side ,may Allah make it easy for us.</p>
+                    </div>
+                </div>
+                
+                <div class="gallery-item" data-category="construction" onclick="openLightbox(this)">
+                    <img src="./IMG-20250706-WA0068.jpg" alt="Wall construction progress">
+                    <div class="gallery-overlay">
+                        <h4>Wall Construction Progress</h4>
+                        <p>Skilled  workers carefully constructed the mosque walls with high-quality materials, we need more donations to make it mosque completed .</p>
+                    </div>
+                </div>
+                
+                <div class="gallery-item" data-category="design" onclick="openLightbox(this)">
+                    <img src="./Screenshot_20250818_190934_WPS Office.jpg" alt="Architectural design">
+                    <div class="gallery-overlay">
+                        <h4>Architectural Design</h4>
+                        <p>Beautiful Islamic architectural design featuring the final result of the mosque .</p>
+                    </div>
+                </div>
+                
+                <div class="gallery-item" data-category="construction" onclick="openLightbox(this)">
+                    <img src="./arc.jpg" alt="Steel framework installation">
+                    <div class="gallery-overlay">
+                        <h4> Arc casting</h4>
+                        <p>casting of arcs and beam for the Preparation of roofing .</p>
+                    </div>
+                </div>
+                
+                <div class="gallery-item" data-category="community" onclick="openLightbox(this)">
+                    <img src="./gather.jpg">
+                    <div class="gallery-overlay">
+                        <h4>jummah Gathering</h4>
+                        <p>Members of the Bells University community coming together to pray jummatin the  the mosque .</p>
+                    </div>
+                </div>
+                
+                <div class="gallery-item" data-category="foundation" onclick="openLightbox(this)">
+                    <img src="./IMG-20250706-WA0068.jpg" alt="Concrete foundation">
+                    <div class="gallery-overlay">
+                        <h4>Pillar casting</h4>
+                        <p>Reinforced concrete pillars was made to create a strong base for the mosque structure.</p>
+                    </div>
+                </div>
+                
+                <div class="gallery-item" data-category="design" onclick="openLightbox(this)">
+                    <img src="./Screenshot_20250818_190934_WPS Office.jpg" alt="Minaret design">
+                    <div class="gallery-overlay">
+                        <h4>Minaret Design</h4>
+                        <p>Elegant minaret design that will serve as a landmark for the university and surrounding community.</p>
+                    </div>
+                </div>
+                
+                <div class="gallery-item" data-category="construction" onclick="openLightbox(this)">
+                    <img src="./IMG_20250711_144340.jpg" alt="Construction team">
+                    <div class="gallery-overlay">
+                        <h4>lovely view </h4>
+                        <p>The space is a Beautiful place for student to learn more about islam.</p>
+                    </div>
+                </div>
+                
+                <div class="gallery-item" data-category="construction" onclick="openLightbox(this)">
+                    <img src="./inside.jpg" alt="Fundraising event">
+                    <div class="gallery-overlay">
+                        <h4>view from inside the building </h4>
+                        <p>THe lovely view from inside that would accomodate all students.</p>
+                    </div>
+                </div>
+                
+                <div class="gallery-item" data-category="design" onclick="openLightbox(this)">
+                    <img src="./IMG_20250711_144611.jpg" alt="Interior design concept">
+                    <div class="gallery-overlay">
+                        <h4>View from the back</h4>
+                        <p>it would be a story building to accomodate more muslim students.</p>
+                    </div>
+                </div>
+                
+                <div class="gallery-item" data-category="construction" onclick="openLightbox(this)">
+                    <img src="./IMG_20250711_144615.jpg" alt="Roofing work">
+                    <div class="gallery-overlay">
+                        <h4>Roofing Preparation</h4>
+                        <p>Preparation work for the mosque roofing system with sustainable and durable materials.</p>
+                    </div>
+                </div>
+                
+                <div class="gallery-item" data-category="community" onclick="openLightbox(this)">
+                    <img src="./temp.jpg" alt="Prayer gathering">
+                    <div class="gallery-overlay">
+                        <h4>Temporary Prayer Space</h4>
+                        <p>Community members gathering for prayers in the temporary prayer space while construction continues.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Donation Section -->
+     <section class="donate" id="donate">
+        <div class="container">
+            <h2 class="section-title">Support the Masjid</h2>
+                <!-- Bank Transfer Info -->
+                <div class="bank-info">
+                    <h3>Bank Transfer Details</h3>
+                    <p>You can make a direct bank transfer to our dedicated mosque construction account:</p>
+                    
+                    <div class="bank-details">
+                        <div class="bank-grid">
+                            <div class="bank-item">
+                                <h4>Bank Name:</h4>
+                                <p>Wema Bank</p>
+                            </div>
+                            <div class="bank-item">
+                                <h4>Account Number:</h4>
+                                <p>0122546581</p>
+                            </div>
+                            <div class="bank-item">
+                                <h4>Account Name:</h4>
+                                <p>Bells Muslim Community</p>
+                            </div>
+                            <div class="bank-item">
+                               
+                                <p>Your sadaqah today will be a home for you in jannah, inshallah</p>
+                            </div>
+                           
+
+                        </div>
+                    </div>
+                    
+                    <p>After making your transfer, please click the button below to confirm your donation so we can properly acknowledge your contribution.</p>
+                    
+                    
+                   
+                    <a  class="transfer-btn" href="https://docs.google.com/forms/d/e/1FAIpQLSc4P3U8aJOmwXIFze1cpCIFnAJXvs49Z0nvOITMecGB6GwCdQ/viewform?usp=header">I've Made a Transfer</a>
+                    
+                    <div class="rewards-box">
+                        <h4>Donation Rewards</h4>
+                        <ul class="rewards-list">
+                            <li>
+                                <i class="fas fa-star"></i>
+                                <span>All donors will be recognized on our website (optional)</span>
+                            </li>
+                            <li>
+                                <i class="fas fa-star"></i>
+                                <span>Major donors (₦1,000,000+) will have their names engraved on a plaque in the masjid</span>
+                            </li>
+                            <li>
+                                <i class="fas fa-star"></i>
+                                <span>All donations are tax-deductible</span>
+                            </li>
+                        </ul>
+                  
+                 
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title">Contact Us</h2>
+            
+            <div class="contact-content">
+                <div class="contact-left">
+                    <div class="contact-info">
+                        <h3 style="color: #059669; margin-bottom: 2rem;">Project Committee</h3>
+                        <div class="contact-person">
+                            <h4>Brother Iskeel Atolagbe</h4>
+                            <p>Project Director</p>
+                            <p><i class="fas fa-phone" style="margin-right: 0.5rem;"></i> +234 815 534 0485</p>
+                        </div>
+                        <div class="contact-person">
+                            <h4>Brother Dhikrullah Abdulrahman</h4>
+                            <p>Fundraising Coordinator</p>
+                            <p><i class="fas fa-phone" style="margin-right: 0.5rem;"></i> +234 902 280 4539</p>
+                        </div>
+                         <div class="contact-person">
+                            <h4>Brother Khaleed </h4>
+                            <p>Community Outreach</p>
+                            <p><i class="fas fa-phone" style="margin-right: 0.5rem;"></i> +234 812 146 9288</p>
+                        </div>
+                        <div class="contact-person">
+                            <h4>Brother Lawal Khaleed </h4>
+                            <p>Community Outreach</p>
+                            <p><i class="fas fa-phone" style="margin-right: 0.5rem;"></i> +234 703 416 5005</p>
+                            
+                        </div>
+                    </div>
+                    
+                    <div class="map-container">
+                        <h3 style="color: #059669; margin-bottom: 1rem;">Visit the Site</h3>
+                        <p style="margin-bottom: 1rem; color: #666;">Km. 8 Idiroko Rd, Benja village, Ota 112104, Ogun State, Nigeria</p>
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3922.963912201094!2d8.516014314793955!3d12.00267329182267!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTLCsDAwJzA5LjYiTiA4wrAzMScwNy4xIkU!5e0!3m2!1sen!2sng!4v1620000000000!5m2!1sen!2sng" allowfullscreen="" loading="lazy"></iframe>
+                    </div>
+                </div>
+                
+                <div class="contact-right">
+                    <div class="contact-form">
+                        <h3 style="color: #059669; margin-bottom: 2rem;">Send Us a Message</h3>
+                        <div class="form-group">
+                            <label for="contact-name">Your Name</label>
+                            <input type="text" id="contact-name">
+                        </div>
+                        <div class="form-group">
+                            <label for="contact-email">Email Address</label>
+                            <input type="email" id="contact-email">
+                        </div>
+                        <div class="form-group">
+                            <label for="contact-subject">Subject</label>
+                            <input type="text" id="contact-subject">
+                        </div>
+                        <div class="form-group">
+                            <label for="contact-message">Message</label>
+                            <textarea id="contact-message" rows="5"></textarea>
+                        </div>
+                        <button class="btn btn-primary" onclick="submitContactForm()">Send Message</button>
+                    </div>
+                    
+                    <div class="prayer-times">
+                        <h3 style="color: #059669; margin-bottom: 1rem;">Prayer Times</h3>
+                        <table class="prayer-table">
+                            <thead>
+                                <tr>
+                                    <th>Prayer</th>
+                                    <th>Time</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Fajr</td>
+                                    <td>5:30 AM</td>
+                                </tr>
+                                <tr>
+                                    <td>Dhuhr</td>
+                                    <td>1:30 PM</td>
+                                </tr>
+                                <tr>
+                                    <td>Asr</td>
+                                    <td>4:45 PM</td>
+                                </tr>
+                                <tr>
+                                    <td>Maghrib</td>
+                                    <td>6:45 PM</td>
+                                </tr>
+                                <tr>
+                                    <td>Isha</td>
+                                    <td>8:00 PM</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <p style="margin-top: 1rem; font-size: 0.9rem; color: #666;">*Times are updated monthly based on the Islamic calendar</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-left">
+                   
+                     <div class="logo-section">
+                    <img src="./logo.jpg" alt="Bells Muslim Mosque Logo" style="height: 50px;">
+                    <span style="font-size: 1.2rem; font-weight: bold;">Bells University Mosque</span>
+                </div>
+                    <p class="footer-text">Building a house of Allah for present and future generations.</p>
+                </div>
+                
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                </div>
+                
+                <div class="footer-right">
+                    <p>© 2025 Bells University Mosque Construction Project</p>
+                    <p style="font-size: 0.9rem; color: #94a3b8;">All Rights Reserved by Bells Muslim Tech Hub.</p>
+                </div>
+            </div>
+        </div>
     </footer>
-      
-  
-</body>
+
+    <!-- Lightbox for Gallery -->
+    <div id="lightbox" class="lightbox">
+        <div class="lightbox-content">
+            <button class="lightbox-close" onclick="closeLightbox()">&times;</button>
+            <button class="lightbox-nav lightbox-prev" onclick="previousImage()">&#8249;</button>
+            <button class="lightbox-nav lightbox-next" onclick="nextImage()">&#8250;</button>
+            <img id="lightbox-img" src="" alt="">
+        </div>
+    </div>
+
+   
+    <script>
+        // Global variables
+        let currentLightboxImage = 0;
+        let lightboxImages = [];
+        let selectedAmount = 0;
+        
+        // Mobile menu toggle
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('active');
+        }
+        
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                    
+                    // Close mobile menu if open
+                    const mobileMenu = document.getElementById('mobile-menu');
+                    mobileMenu.classList.remove('active');
+                }
+            });
+        });
+        
+        // Gallery filter functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const filterButtons = document.querySelectorAll('.filter-btn');
+            const galleryItems = document.querySelectorAll('.gallery-item');
+            
+            filterButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    const filter = this.getAttribute('data-filter');
+                    
+                    // Update active button
+                    filterButtons.forEach(btn => btn.classList.remove('active'));
+                    this.classList.add('active');
+                    
+                    // Filter gallery items
+                    galleryItems.forEach(item => {
+                        const category = item.getAttribute('data-category');
+                        if (filter === 'all' || category === filter) {
+                            item.style.display = 'block';
+                            setTimeout(() => {
+                                item.style.opacity = '1';
+                                item.style.transform = 'scale(1)';
+                            }, 100);
+                        } else {
+                            item.style.opacity = '0';
+                            item.style.transform = 'scale(0.8)';
+                            setTimeout(() => {
+                                item.style.display = 'none';
+                            }, 300);
+                        }
+                    });
+                });
+            });
+            
+            // Initialize lightbox images array
+            galleryItems.forEach((item, index) => {
+                const img = item.querySelector('img');
+                lightboxImages.push({
+                    src: img.src,
+                    alt: img.alt
+                });
+            });
+        });
+
+        // Lightbox functions
+        function openLightbox(element) {
+            const img = element.querySelector('img');
+            const index = Array.from(document.querySelectorAll('.gallery-item')).indexOf(element);
+            currentLightboxImage = index;
+            
+            document.getElementById('lightbox-img').src = img.src;
+            document.getElementById('lightbox-img').alt = img.alt;
+            document.getElementById('lightbox').classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeLightbox() {
+            document.getElementById('lightbox').classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+
+        function nextImage() {
+            currentLightboxImage = (currentLightboxImage + 1) % lightboxImages.length;
+            updateLightboxImage();
+        }
+
+        function previousImage() {
+            currentLightboxImage = currentLightboxImage === 0 ? lightboxImages.length - 1 : currentLightboxImage - 1;
+            updateLightboxImage();
+        }
+
+        function updateLightboxImage() {
+            const img = document.getElementById('lightbox-img');
+            img.src = lightboxImages[currentLightboxImage].src;
+            img.alt = lightboxImages[currentLightboxImage].alt;
+        }
+
+        // Close lightbox with escape key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                closeLightbox();
+            } else if (e.key === 'ArrowRight') {
+                nextImage();
+            } else if (e.key === 'ArrowLeft') {
+                previousImage();
+            }
+        });
+        
+        // Scroll animations
+        function animateOnScroll() {
+            const elements = document.querySelectorAll('.fade-in, .slide-in-left, .slide-in-right');
+            
+            elements.forEach(element => {
+                const elementTop = element.getBoundingClientRect().top;
+                const elementVisible = 150;
+                
+                if (elementTop < window.innerHeight - elementVisible) {
+                    element.style.opacity = '1';
+                    element.style.transform = 'translateY(0) translateX(0)';
+                }
+            });
+        }
+
+        // Initialize animations
+        document.addEventListener('DOMContentLoaded', function() {
+            // Set initial states for animated elements
+            document.querySelectorAll('.fade-in').forEach(el => {
+                el.style.opacity = '0';
+                el.style.transform = 'translateY(30px)';
+                el.style.transition = 'all 0.6s ease';
+            });
+            
+            document.querySelectorAll('.slide-in-left').forEach(el => {
+                el.style.opacity = '0';
+                el.style.transform = 'translateX(-50px)';
+                el.style.transition = 'all 0.8s ease';
+            });
+            
+            document.querySelectorAll('.slide-in-right').forEach(el => {
+                el.style.opacity = '0';
+                el.style.transform = 'translateX(50px)';
+                el.style.transition = 'all 0.8s ease';
+            });
+            
+            // Trigger initial animation check
+            setTimeout(animateOnScroll, 100);
+            
+            // Update progress bar animation
+            setTimeout(() => {
+                const progressFill = document.querySelector('.progress-fill');
+                if (progressFill) {
+                    progressFill.style.width = '56.67%';
+                }
+            }, 500);
+        });
+
+        // Listen for scroll events
+        window.addEventListener('scroll', animateOnScroll);
+
+        // Close modals when clicking outside
+        document.addEventListener('click', function(e) {
+            if (e.target.classList.contains('modal')) {
+                const modalId = e.target.id;
+                closeModal(modalId);
+            }
+            
+            if (e.target.classList.contains('lightbox')) {
+                closeLightbox();
+            }
+        });
+        
+        // Update footer year
+        document.addEventListener('DOMContentLoaded', function() {
+            const currentYear = new Date().getFullYear();
+            const footerText = document.querySelector('.footer-right p');
+            if (footerText) {
+                footerText.textContent = `© ${currentYear} Bells University Mosque Construction Project`;
+            }
+        });
+
+
+
+    </script>
 </html>
+
+
+
+
+      
